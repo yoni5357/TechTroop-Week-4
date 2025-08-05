@@ -3,7 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
-function App() {
+function Ex1() {
     let companies = [
     { name: "Tesla", revenue: 140 },
     { name: "Microsoft", revenue: 300 },
@@ -22,4 +22,5 @@ function App() {
   )
 }
 
-export default App
+
+export default Ex1
