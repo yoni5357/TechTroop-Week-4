@@ -34,7 +34,7 @@ function App() {
     if(data.currentPage === "Landing"){
       return <Landing name={data.user} hottest={formatItem(data.store).item} price={formatItem(data.store).price}  />
     }
-    return <Home store={data.store}/>
+    return <Home store={data.store} shouldDiscount={data.shouldDiscount}/>
   }
 
   return (
