@@ -6,9 +6,11 @@ const Exercise2 = () => {
 
   function handleSelect (e){
     setFruit(e.target.value)
-    console.log(`${name} selected ${fruit}`)
   }
 
+  if(name && fruit){
+    console.log(`${name} selected ${fruit}`)
+  }
   return (
     <div>
       <input
