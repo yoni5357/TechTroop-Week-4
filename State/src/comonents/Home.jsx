@@ -4,7 +4,7 @@ function Home({store}){
     let items = store.map((item, index) => <Item key={index} item={item.item} price={item.price}/>)
     return (
         <>
-        Store
+        <h4>Store</h4>
         {items}
         </>
     )
