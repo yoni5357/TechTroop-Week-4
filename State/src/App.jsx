@@ -23,11 +23,28 @@ function App() {
     return filteredStore[0]; // Return the first (and likely only) hottest item
   }
 
+  const switchPage = (pageName) => {
+    let newData = {...data};
+    newData.currentPage = pageName;
+    setData(newData);
+  }
+
+
+  const displayCurrent = () => {
+    if(data.currentPage === "Landing"){
+      return <Landing name={data.user} hottest={formatItem(data.store).item} price={formatItem(data.store).price}  />
+    }
+    return <Home store={data.store}/>
+  }
+
   return (
     <div>
       <Hudini/>
-      <Landing name={data.user} hottest={formatItem(data.store).item} price={formatItem(data.store).price}  />
-      <Home store={data.store}/>
+      {displayCurrent()}
+      <div>
+        <button onClick={() => switchPage("Home")}>Home</button>
+        <button onClick={() => switchPage("Landing")}>Landing</button>
+      </div>
     </div>
 
   )
