@@ -1,7 +1,7 @@
 
 
-export default function Contact({cname}){
+export default function Contact({cname, display}){
     return(
-        <div>{cname}</div>
+        <div onClick={() => display(cname)}>{cname}</div>
     )
 }
