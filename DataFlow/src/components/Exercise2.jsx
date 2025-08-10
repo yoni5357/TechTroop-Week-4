@@ -35,9 +35,13 @@ function Exercise2(){
         ]
     });
 
+    const getNames = () => {
+        return data.conversations.map(convo => convo.with);
+    }
+
     return(
         <>
-        {data.displayConversation ? <Conversation/> : <List/>}
+        {data.displayConversation ? <Conversation/> : <List names={getNames()}/>}
         </>
     )
 }
