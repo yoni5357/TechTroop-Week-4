@@ -44,9 +44,15 @@ function Exercise2(){
         setData(newData);
     }
 
+    const getConvo = (cname) => {
+        return data.conversations.filter(item => item.with === cname).map(item => item.convo)[0];
+    }
+
     return(
         <>
-        {data.displayConversation ? <Conversation/> : <List names={getNames()} display={displayConvo}/>}
+        {data.displayConversation ? 
+        <Conversation convo={getConvo(data.displayConversation)} sender={data.displayConversation}/> : 
+        <List names={getNames()} display={displayConvo}/>}
         </>
     )
 }
