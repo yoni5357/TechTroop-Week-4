@@ -48,10 +48,15 @@ function Exercise2(){
         return data.conversations.filter(item => item.with === cname).map(item => item.convo)[0];
     }
 
+    const handleBack = () => {
+        const newData = {displayConversation: null, conversations:[...data.conversations]};
+        setData(newData);
+    }
+
     return(
         <>
         {data.displayConversation ? 
-        <Conversation convo={getConvo(data.displayConversation)} sender={data.displayConversation}/> : 
+        <Conversation convo={getConvo(data.displayConversation)} sender={data.displayConversation} handleBack={handleBack}/> : 
         <List names={getNames()} display={displayConvo}/>}
         </>
     )

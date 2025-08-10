@@ -1,5 +1,5 @@
 
-export default function Conversation({convo, sender}){
+export default function Conversation({convo, sender, handleBack}){
 
     const renderConversation = () => {
         return convo.map((line,index) => {
@@ -8,8 +8,9 @@ export default function Conversation({convo, sender}){
         })
     }
     return(
-        <>
+        <div>
         {renderConversation()}
-        </>
+        <button onClick={handleBack} className="back">Back</button>
+        </div>
     )
 }
