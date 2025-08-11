@@ -21,6 +21,26 @@ export default function Exercise2(){
         getPosts()
     },[])
 
+    useEffect(() => {
+        function handleResize() {
+            if (window.innerWidth < 800) {
+                document.querySelector('.main-container').style.flexDirection = 'column';
+                document.querySelectorAll('.post-container').forEach(el => {
+                    el.style.width = '100%';
+                });
+            } 
+            else {
+                document.querySelector('.main-container').style.flexDirection = 'row';
+                document.querySelectorAll('.post-container').forEach(el => {
+                    el.style.width = '20%';
+                });
+            }
+        }
+        window.addEventListener('resize', handleResize);
+        handleResize();
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     const renderPosts = () => {
         return posts.map((post,index) =>{
             return(<div className="post-container" key={index}>
@@ -32,7 +52,7 @@ export default function Exercise2(){
 
     return(
         <div className="main-container">
-        {renderPosts()}
+            {renderPosts()}
         </div>
     )
 }
