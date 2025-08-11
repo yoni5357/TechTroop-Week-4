@@ -13,9 +13,11 @@ export default function Exercise1(){
     }
 
     useEffect(() => {
-        setInterval(() => {
+        const interval = setInterval(() => {
             setTime(getFormattedTime());
         },1000)
+
+        return () => clearInterval(interval);
     },[])
 
     return(
