@@ -37,7 +37,6 @@ export default function Exercise2(){
             }
         }
         window.addEventListener('resize', handleResize);
-        handleResize();
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
