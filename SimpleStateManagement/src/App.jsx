@@ -3,14 +3,17 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import ShoppingCart from './components/ShoppingCart'
+import { SettingsProvider } from './SettingsProvider'
+import Layout from './components/Layout'
 
 function App() {
-
+  
   return (
-    <>
-    <ShoppingCart/>
-    </>
+    <SettingsProvider>
+      <Layout/>
+    </SettingsProvider>
   )
 }
+
 
 export default App
